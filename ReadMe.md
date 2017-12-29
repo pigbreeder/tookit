@@ -10,3 +10,4 @@
 | go_net.py | 校园网自动登陆/注销 |
 | .tmux.conf| tmux 配置文件       |
 | .vimrc    | vim  配置文件       |
+| .bash_profile |  bash配置文件       |
