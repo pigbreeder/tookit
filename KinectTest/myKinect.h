@@ -4,6 +4,7 @@
 #include <opencv2\opencv.hpp>
 #include <iostream>
 #include <string>
+#include "time.h"
 // Safe release for interfaces
 template<class Interface>
 inline void SafeRelease(Interface *& pInterfaceToRelease)
@@ -18,8 +19,8 @@ inline void SafeRelease(Interface *& pInterfaceToRelease)
 class CBodyBasics
 
 {
-	static constexpr  const char*		rgbSavePathBase="D:\\env\\kinect\\rgb\\";
-	static constexpr  const char*		rgbDepthSavePathBase = "D:\\env\\kinect\\rgb_depth\\";
+	static constexpr  const char*		rgbSavePathBase="G:\\env\\kinect\\rgb\\";
+	static constexpr  const char*		rgbDepthSavePathBase = "G:\\env\\kinect\\rgb_depth\\";
 	static constexpr  const char*		depthSavePathBase = "D:\\env\\kinect\\depth\\";
 	static constexpr  const char*		depthRgbSavePathBase = "D:\\env\\kinect\\depth_rgb\\";
 	static const int        cColorWidth = 1920;
@@ -49,6 +50,7 @@ private:
 	CameraSpacePoint*		m_colorCameraSpacePoint;
 	CameraSpacePoint*		m_colorOupputCameraSpacePoint;
 	ColorSpacePoint*		m_pColorCoordinates;
+	UINT16 *				depthArray;
 													//通过获得到的信息，把骨架和背景二值图画出来
 	void                    ProcessBody(int nBodyCount, IBody** ppBodies);
 	//画骨架函数

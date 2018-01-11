@@ -36,10 +36,20 @@ int main()
 	//printf("%s", tmp);
 	CBodyBasics myKinect;
 	HRESULT hr = myKinect.InitializeDefaultSensor();
+	int cnt = 0;
 	if (SUCCEEDED(hr)) {
+		clock_t start, finish;
+		double duration; 
 		while (1) {
+			/*if (cnt >= 100) {
+				break;
+			}*/
+			start = clock();
 			//Sleep(1000);
 			myKinect.Update();
+			finish = clock();
+			duration = (double)(finish - start) / CLOCKS_PER_SEC;
+			printf("No.%d total time:%f seconds\n", cnt++, duration);
 			if (cv::waitKey(1) >= 0)//按下任意键退出
 			{
 				break;
