@@ -18,12 +18,17 @@ cnoremap <C-j> <t_kd>
 cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
-inoremap <C-h>   <Left>
-inoremap <C-j>   <Down>
-inoremap <C-k>   <Up>
-inoremap <C-l>   <Right>
+" inoremap <C-h>   <Left>
+" inoremap <C-j>   <Down>
+" inoremap <C-k>   <Up>
+" inoremap <C-l>   <Right>
 inoremap <C-d>   <DELETE>
 
+
+" if this not work ,make sure .viminfo is writable for you
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 "更新最近修改时间和文件名
 function UpdateTitle()
@@ -237,9 +242,9 @@ set backspace=2
 " 允许backspace和光标键跨越行边界
 set whichwrap+=<,>,h,l
 " 可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）
-set mouse=a
+" set mouse=a
 set selection=exclusive
-set selectmode=mouse,key
+" set selectmode=mouse,key
 " 通过使用: commands命令，告诉我们文件的哪一行被改变过
 set report=0
 " 在被分割的窗口间显示空白，便于阅读
