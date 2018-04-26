@@ -1,6 +1,7 @@
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-
+export TIME_STYLE='+%Y/%m/%d %H:%M:%S' 
+# ls 显示详细时间
 alias l='ls -CFG' #CFG代表字段格式显示 文件项目上加标示符 禁止显示组群信息
 alias ll='ls -al'
 alias lx='ls -lhBX'        #sort by extension
