@@ -13,16 +13,54 @@ nnoremap <leader>w :w<CR>
 "Map ; to : and save a million keystrokes
 " ex mode commands made easy 用于快速进入命令行
 nnoremap ; :
-" command mode, ctrl-a to head， ctrl-e to tail
-cnoremap <C-j> <t_kd>
-cnoremap <C-k> <t_ku>
+
+" Key Mappings {{{ "
+" 快速输入
+" Bash like keys for the command line
 cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
-" inoremap <C-h>   <Left>
-" inoremap <C-j>   <Down>
-" inoremap <C-k>   <Up>
-" inoremap <C-l>   <Right>
-inoremap <C-d>   <DELETE>
+
+" Ctrl-[hl]: Move left/right by word
+cnoremap <C-h> <S-Left>
+cnoremap <C-l> <S-Right>
+
+" Ctrl-[bf]: I don't use <C-b> to open mini window often
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+
+" Ctrl-a: Go to begin of line
+inoremap <C-a> <Home>
+
+" Ctrl-e: Go to end of line
+inoremap <C-e> <End>
+
+" Ctrl-[bf]: Move cursor left/right
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+
+" Ctrl-[hl]: Move left/right by word
+inoremap <C-h> <S-Left>
+inoremap <C-l> <S-Right>
+
+" Ctrl-[kj]: Move cursor up/down
+inoremap <C-k> <C-o>gk
+inoremap <C-j> <C-o>gj
+
+" Recover from accidental Ctrl-U http://vim.wikia.com/wiki/Recover_from_accidental_Ctrl-U
+inoremap <c-u> <c-g>u<c-u>
+inoremap <c-w> <c-g>u<c-w>
+
+" Ctrl-[kj]: Move lines up/down
+" nnoremap <silent> <C-j> :m .+1<CR>==
+" nnoremap <silent> <C-k> :m .-2<CR>==
+" inoremap <silent> <C-j> <Esc>:m .+1<CR>==gi
+" inoremap <silent> <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <silent> <C-j> :m '>+1<CR>gv=gv
+vnoremap <silent> <C-k> :m '<-2<CR>gv=gv
+
+" }}} Key Mappings "
+
+" Misc {{{ "
+
 
 
 " if this not work ,make sure .viminfo is writable for you
