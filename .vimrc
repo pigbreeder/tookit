@@ -314,3 +314,5 @@ endfunction
 filetype plugin indent on 
 "打开文件类型检测, 加了这句才可以用智能补全
 set completeopt=longest,menu
+" paste 模式快捷设置
+set pastetoggle=<F11>
