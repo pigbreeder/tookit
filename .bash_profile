@@ -200,7 +200,7 @@ dirsize ()
 function cl ()
 {
     if [ -n "$1" ]; then
-        builtin cd "$@"&& ls -la --group-directories-first --time-style=+"%Y-%d-%m %H:%M:%S" --color=auto -F   
+        builtin cd "$@"&& ls -la --group-directories-first --time-style=+"%Y-%d-%m %H:%M:%S" --color=auto -F && pwd
     else
         builtin cd ~&& ls
     fi
