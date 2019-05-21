@@ -7,6 +7,11 @@ export HISTFILE=~/.bash_history
 export HISTFILESIZE=10000
 export HISTSIZE=10000
 export HISTCONTROL=erasedups
+alias tmux='tmux -2' # Force tmux to assume the terminal supports 256 colours
+alias duf='du -h --max-depth=1'
+alias cdd='cd /mfs_gpu/exec/xsy'
+xsy=/mfs_gpu/exec/xsy
+export xsy
 
 alias path='echo -e ${PATH//:/\\n}'
 alias rm='rm -i'
