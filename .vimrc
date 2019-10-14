@@ -318,3 +318,6 @@ filetype plugin indent on
 set completeopt=longest,menu
 " paste 模式快捷设置
 set pastetoggle=<F11>
+if &diff
+    colors blue
+endif

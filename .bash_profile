@@ -14,6 +14,9 @@ xsy=/mfs_gpu/exec/xsy
 export xsy
 
 alias path='echo -e ${PATH//:/\\n}'
+PATH=$(echo $PATH | sed 's/:/\n/g' | sort | uniq | sed '/^$/d' | tr -s '\n' ':' | sed 's/:$//g')
+export TERM=screen-256color
+stty -ixon # 去除Ctrl+s锁屏的情况
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
